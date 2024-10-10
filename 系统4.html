@@ -1,62 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>管理员界面任务4</title>
-    <link rel="stylesheet" href="用户界面.css">
+    <link rel="stylesheet" href="图书借阅界面.css">
+    <title>图书馆管理系统 - 图书信息管理</title>
 </head>
+
 <body>
-    <h1>图书信息</h1>
-    <form>
-        <table>
-            <tbody>
+    <div id="header">
+        <div id="logo">
+            <img src="图书馆标志.png" alt="图书馆标志">
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">图书管理</a></li>
+                <li><a href="#">用户管理</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </div>
+        <div id="userInfo">
+            <img src="管理员头像.jpg" alt="管理员头像">
+            <span>管理员李四</span>
+        </div>
+    </div>
+    <div id="main">
+        <h2>新增或修改图书信息</h2>
+        <form id="bookForm">
+            <table class="book-info-table">
                 <tr>
-                    <th>书号：</th>
-                    <td><input type="text" name="bookID" placeholder="请输入书号"></td>
+                    <th>书号</th>
+                    <td><input type="text" name="bookNumber" required></td>
                 </tr>
                 <tr>
-                    <th>类别：</th>
-                    <td>
-                        <select name="类别" id="category">
-                            <option value="">点击下拉选择类别</option>
-                            <option value="文学类">文学类</option>
-                            <option value="科技类">科技类</option>
-                            <option value="社会科学类">社会科学类</option>
-                            <option value="艺术类">艺术类</option>
-                            <option value="教育类">教育类</option>
-                        </select>
-                    </td>
+                    <th>类别</th>
+                    <td><input type="text" name="category" required></td>
                 </tr>
                 <tr>
-                    <th>出版社：</th>
-                    <td><input type="text" name="publisher" placeholder="请输入出版社"></td>
+                    <th>出版社</th>
+                    <td><input type="text" name="publisher" required></td>
                 </tr>
                 <tr>
-                    <th>作者：</th>
-                    <td><input type="text" name="author" placeholder="请输入作者"></td>
+                    <th>作者</th>
+                    <td><input type="text" name="author" required></td>
                 </tr>
                 <tr>
-                    <th>书名：</th>
-                    <td><input type="text" name="title" placeholder="请输入书名"></td>
+                    <th>书名</th>
+                    <td><input type="text" name="bookTitle" required></td>
                 </tr>
                 <tr>
-                    <th>定价：</th>
-                    <td><input type="text" name="price" placeholder="请输入定价"></td>
+                    <th>定价</th>
+                    <td><input type="number" name="price" step="0.01" required></td>
                 </tr>
                 <tr>
-                    <th>备注:</th>
-                    <td><textarea name="note" placeholder="请输入备注信息"></textarea></td>
+                    <th>备注</th>
+                    <td><textarea name="remark" rows="3"></textarea></td>
                 </tr>
                 <tr>
                     <th>书皮封面</th>
-                    <td><input type="file" name="cover"></td>
+                    <td><input type="file" name="bookCover"></td>
                 </tr>
-           </tbody>
-        </table>
-        <div style="text-align: center;">
-            <button type="submit" id="Button">提交</button>
-        </div>
-    </form>
+            </table>
+            <button type="submit">提交</button>
+        </form>
+    </div>
+    <div id="footer">
+        © 2024 图书馆管理系统。版权所有。
+    </div>
+    <script>
+        const bookForm = document.getElementById('bookForm');
+        bookForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // 在这里可以添加提交表单数据到后端的逻辑
+            console.log('表单提交的数据：', new FormData(bookForm));
+        });
+    </script>
 </body>
+
 </html>
