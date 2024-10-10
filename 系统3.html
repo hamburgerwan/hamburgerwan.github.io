@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>图书信息管理</title>
+</head>
+<body>
+<div style=" margin-left: 30%;  border: groove; background-color: antiquewhite; width:500px;   ">
+<h2>新增/修改图书信息</h2>
+<form action="#" method="post">
+    <table>
+     <tr>
+          <td>选择修改类型</td>
+          <td>
+               <select name="1" required>
+                    <option value="新增">新增</option>
+                    <option value="修正">修正</option>
+               </select>
+          </td>
+     </tr>
+        <tr>
+            <td>书号：</td>
+            <td><input type="text" name="bookId" required></td>
+        </tr>
+        <tr>
+            <td>类别：</td>
+            <td>
+                <select name="category" required>
+                    <option value="小说">小说</option>
+                    <option value="科技">科技</option>
+                    <option value="教育">教育</option>
+                    <option value="历史">历史</option>
+                    <option value="其他">其他</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>出版社：</td>
+            <td><input type="text" name="publisher" required></td>
+        </tr>
+        <tr>
+            <td>作者：</td>
+            <td><input type="text" name="author" required></td>
+        </tr>
+        <tr>
+            <td>书名：</td>
+            <td><input type="text" name="title" required></td>
+        </tr>
+        <tr>
+            <td>定价：</td>
+            <td><input type="number" name="price" step="0.01" required></td>
+        </tr>
+        <tr>
+            <td>备注：</td>
+            <td><textarea name="remarks"></textarea></td>
+        </tr>
+        <tr>
+            <td>书皮封面：</td>
+            <td><input type="file" name="coverImage" accept="image/*"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <button type="submit">提交</button>
+            </td>
+        </tr>
+    </table>
+    </form>
+</div>
+
+
+</body>
+</html>

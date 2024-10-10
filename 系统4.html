@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员界面任务4</title>
+    <link rel="stylesheet" href="用户界面.css">
+</head>
+<body>
+    <h1>图书信息</h1>
+    <form>
+        <table>
+            <tbody>
+                <tr>
+                    <th>书号：</th>
+                    <td><input type="text" name="bookID" placeholder="请输入书号"></td>
+                </tr>
+                <tr>
+                    <th>类别：</th>
+                    <td>
+                        <select name="类别" id="category">
+                            <option value="">点击下拉选择类别</option>
+                            <option value="文学类">文学类</option>
+                            <option value="科技类">科技类</option>
+                            <option value="社会科学类">社会科学类</option>
+                            <option value="艺术类">艺术类</option>
+                            <option value="教育类">教育类</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>出版社：</th>
+                    <td><input type="text" name="publisher" placeholder="请输入出版社"></td>
+                </tr>
+                <tr>
+                    <th>作者：</th>
+                    <td><input type="text" name="author" placeholder="请输入作者"></td>
+                </tr>
+                <tr>
+                    <th>书名：</th>
+                    <td><input type="text" name="title" placeholder="请输入书名"></td>
+                </tr>
+                <tr>
+                    <th>定价：</th>
+                    <td><input type="text" name="price" placeholder="请输入定价"></td>
+                </tr>
+                <tr>
+                    <th>备注:</th>
+                    <td><textarea name="note" placeholder="请输入备注信息"></textarea></td>
+                </tr>
+                <tr>
+                    <th>书皮封面</th>
+                    <td><input type="file" name="cover"></td>
+                </tr>
+           </tbody>
+        </table>
+        <div style="text-align: center;">
+            <button type="submit" id="Button">提交</button>
+        </div>
+    </form>
+</body>
+</html>
