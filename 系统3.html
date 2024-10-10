@@ -1,72 +1,110 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>图书信息管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="图书借阅界面.css">
+    <title>图书馆管理系统 - 管理员页面</title>
 </head>
+
 <body>
-<div style=" margin-left: 30%;  border: groove; background-color: antiquewhite; width:500px;   ">
-<h2>新增/修改图书信息</h2>
-<form action="#" method="post">
-    <table>
-     <tr>
-          <td>选择修改类型</td>
-          <td>
-               <select name="1" required>
-                    <option value="新增">新增</option>
-                    <option value="修正">修正</option>
-               </select>
-          </td>
-     </tr>
-        <tr>
-            <td>书号：</td>
-            <td><input type="text" name="bookId" required></td>
-        </tr>
-        <tr>
-            <td>类别：</td>
-            <td>
-                <select name="category" required>
-                    <option value="小说">小说</option>
-                    <option value="科技">科技</option>
-                    <option value="教育">教育</option>
-                    <option value="历史">历史</option>
-                    <option value="其他">其他</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>出版社：</td>
-            <td><input type="text" name="publisher" required></td>
-        </tr>
-        <tr>
-            <td>作者：</td>
-            <td><input type="text" name="author" required></td>
-        </tr>
-        <tr>
-            <td>书名：</td>
-            <td><input type="text" name="title" required></td>
-        </tr>
-        <tr>
-            <td>定价：</td>
-            <td><input type="number" name="price" step="0.01" required></td>
-        </tr>
-        <tr>
-            <td>备注：</td>
-            <td><textarea name="remarks"></textarea></td>
-        </tr>
-        <tr>
-            <td>书皮封面：</td>
-            <td><input type="file" name="coverImage" accept="image/*"></td>
-        </tr>
-        <tr>
-            <td colspan="2" style="text-align: center;">
-                <button type="submit">提交</button>
-            </td>
-        </tr>
-    </table>
-    </form>
-</div>
+    <div id="header">
+        <div id="logo">
+            <img src="图书馆标志.png" alt="图书馆标志">
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">图书管理</a></li>
+                <li><a href="#">用户管理</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </div>
+        <div id="userInfo">
+            <img src="管理员头像.jpg" alt="管理员头像">
+            <span>管理员李四</span>
+        </div>
+    </div>
+    <div id="main">
+        <div id="leftSide">
+            <h2>用户管理</h2>
+            <input type="text" placeholder="搜索用户">
+            <button>搜索</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>用户名</th>
+                        <th>联系方式</th>
+                        <th>借阅状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>王五</td>
+                        <td>1234567890</td>
+                        <td>有未还书籍</td>
+                        <td>
+                            <button>删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>赵六</td>
+                        <td>9876543210</td>
+                        <td>无未还书籍</td>
+                        <td>
+                            <button>删除</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="addUserButton">添加用户</button>
+        </div>
+        <div id="rightSide">
+            <h2>统计信息</h2>
+            <p>总用户数：100</p>
+            <p>活跃用户数：80</p>
+        </div>
+    </div>
+    <div id="footer">
+      
+    </div>
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>添加用户</h2>
+            <form>
+                <label for="username">用户名：</label>
+                <input type="text" id="username">
+                <label for="contact">联系方式：</label>
+                <input type="text" id="contact">
+                <button type="submit">确认添加</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // 获取添加用户按钮和模态框
+        const addUserButton = document.getElementById('addUserButton');
+        const addUserModal = document.getElementById('addUserModal');
+        const closeModal = document.getElementsByClassName('close')[0];
 
+        // 点击添加用户按钮时显示模态框
+        addUserButton.onclick = function () {
+            addUserModal.style.display = 'block';
+        };
 
+        // 点击关闭按钮或模态框外部时关闭模态框
+        closeModal.onclick = function () {
+            addUserModal.style.display = 'none';
+        };
+
+        window.onclick = function (event) {
+            if (event.target === addUserModal) {
+                addUserModal.style.display = 'none';
+            }
+        };
+    </script>
 </body>
+
 </html>
