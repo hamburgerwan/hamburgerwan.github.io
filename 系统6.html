@@ -1,50 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>用户借书情况</title>
-    <link rel="stylesheet" href="图书借阅系统用户css\小组任务4.css" type="text/css">
+    <link rel="stylesheet" href="图书借阅界面.css">
+    <title>图书馆管理系统</title>
 </head>
+
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>借书情况</th>
-            </tr>
-            <tr>
-                <td>
-                    <form action="">
-                        书名
-                        <input type="hidden" value="30">
-                    </form>
-                </td>
-                <td>
-                    <form action="">
-                        书名
-                        <input type="hidden" value="40">
-                    </form>
-                </td>
-            <tr>
-                <td>70</td>
-            </tr>
-            <tr>
-                <th>欠款</th>
-            </tr>
-            <th>
-                <td>70</td>
-            </th>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td>
-                    <form action="">
-                        <label for="最喜爱图书推介">最喜爱图书推介</label>
-                        <input type="checkbox" id="最喜爱图书推介" name="最喜爱图书推介">
-                    </form>
-                </td>
-            </tr>
-        </tfoot>
-    </table>
+    <div id="header">
+        <div id="logo">
+            <img src="图书馆标志.png" alt="图书馆标志">
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">图书</a></li>
+                <li><a href="#">作者</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </div>
+        <div id="userInfo">
+            <img src="用户头像.jpg" alt="用户头像">
+            <span>张三</span>
+        </div>
+    </div>
+    <div id="main">
+        <div id="leftSide">
+            <h2>您的借阅书籍</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>书名</th>
+                        <th>作者</th>
+                        <th>应还日期</th>
+                        <th>状态</th>
+                        <th>欠款金额</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">《了不起的盖茨比》</a></td>
+                        <td>菲茨杰拉德</td>
+                        <td>2024 年 10 月 20 日</td>
+                        <td>已逾期</td>
+                        <td>5 元</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">《杀死一只知更鸟》</a></td>
+                        <td>哈珀·李</td>
+                        <td>2024 年 10 月 25 日</td>
+                        <td>未到期</td>
+                        <td>0 元</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>总欠款金额：5 元</p>
+            <button>归还图书</button>
+        </div>
+        <div id="rightSide">
+            <h2>喜爱图书推荐</h2>
+            <p>根据您的借阅历史，以下是一些您可能喜欢的书籍：</p>
+            <ul>
+                <li><a href="#">《1984》乔治·奥威尔</a></td>
+                <li><a href="#">《傲慢与偏见》简·奥斯汀</a></td>
+                <li><a href="#">《麦田里的守望者》J.D.塞林格</a></td>
+            </ul>
+        </div>
+    </div>
+    <div id="footer">
+        <p>版权所有◎2024 - 10 - 10 by 20230222王瀚博</p>
+    </div>
 </body>
+
 </html>
