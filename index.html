@@ -18,7 +18,7 @@
       background-color: #f4f4f4;
     }
 
-  .login-container {
+   .login-container {
       width: 300px;
       margin: 100px auto;
       padding: 20px;
@@ -27,13 +27,13 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-  .login-container h2 {
+   .login-container h2 {
       text-align: center;
       margin-bottom: 20px;
     }
 
-  .login-container input[type="text"],
-  .login-container input[type="password"] {
+   .login-container input[type="text"],
+   .login-container input[type="password"] {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -41,7 +41,7 @@
       border-radius: 3px;
     }
 
-  .login-container button {
+   .login-container button {
       width: 100%;
       padding: 10px;
       background-color: #4CAF50;
@@ -51,22 +51,22 @@
       cursor: pointer;
     }
 
-  .login-container button:hover {
+   .login-container button:hover {
       background-color: #45a049;
     }
 
     /* 注册链接样式 */
-  .register-link {
+   .register-link {
       text-align: center;
       margin-top: 10px;
     }
 
-  .register-link a {
+   .register-link a {
       color: #4CAF50;
       text-decoration: none;
     }
 
-  .register-link a:hover {
+   .register-link a:hover {
       text-decoration: underline;
     }
   </style>
@@ -78,17 +78,30 @@
     <form action="">
       <input type="text" placeholder="用户名">
       <input type="password" placeholder="密码">
+      <select name="userType" id="userType">
+        <option value="普通用户">普通用户</option>
+        <option value="管理员">管理员</option>
+      </select>
       <button type="submit">登录</button>
     </form>
     <div class="register-link">
       <p><a href="注册.html">还没有账号？点击注册</a></p>
-      <a href="系统3.html">读者借书情况</a><br>
-      <a href="系统4.html">管理员情况</a><br>
-      <a href="系统5.html">读者登录情况</a><br>
-      <a href="系统6.html">读者借书信息情况</a><br>
     </div>
   </div>
   <p style="text-align: center; font-size: 14px; color: #888;">版权所有◎2024 - 10 - 6 by 20230222王瀚博</p>
+  <script>
+    document.querySelector('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const username = document.querySelector('input[type="text"]').value;
+      const password = document.querySelector('input[type="password"]').value;
+      const userType = document.getElementById('userType').value;
+      if (userType === '普通用户') {
+        window.location.href = '普通用户界面.html';
+      } else if (userType === '管理员') {
+        window.location.href = '管理员界面.html';
+      }
+    });
+  </script>
 </body>
 
 </html>
